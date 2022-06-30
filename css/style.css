@@ -1,0 +1,93 @@
+body {
+    /* background-image: url('../img/bg.png'); */
+    background-color: #201A23;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    color: #F8E5EE;
+}
+
+section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    /* border: solid 1px white; */
+    background-color: #2E2532;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    /* border: solid 1px white; */
+    width: 100%;
+    background-color: #2E2532;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 5px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img.icon {
+    width: 14vw;
+    height: 14vw;
+    border-radius: 20px;
+    margin-top: .5vw;
+}
+
+img#movies {
+    background-color: white;
+}
+
+img#sugeanime {
+    background-color: #161616;
+}
+
+img#snapdrop {
+    width: 40px;
+    height: 40px;
+}
+
+#flex1 {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box {
+    background-color: #2E2532;
+    border-radius: 20px;
+    text-align: center;
+    font-size: larger;
+    min-width: 15vw;
+}
