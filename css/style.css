@@ -55,7 +55,8 @@ table {
 :root {
     --primary-color: #201A23;
     --secondary-color: #2E2532;
-    --accent-color: #FFF; 
+    --tertiary-color: #43344A;
+    --accent-color: #6A477B;
     --text-color: #f8e5ee;
 } /* Change these via the DOM, *BOOM* themes */
 
@@ -65,6 +66,14 @@ table {
 
 .secondary-bg {
     background-color: var(--secondary-color);
+}
+
+.tertiary-bg {
+    background-color: var(--tertiary-color);
+}
+
+.accent-bg {
+    background-color: var(--accent-color);
 }
 
 body {
@@ -137,7 +146,7 @@ p {
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 
 a p {
@@ -152,7 +161,7 @@ img.icon {
 }
 
 img#movies {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 img#sugeanime {
@@ -251,11 +260,11 @@ img#sugeanime {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    background-color: var(--secondary-color);
+    background-color: var(--tertiary-color);
 }
 
 .drop-item:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     transition: all .2s ease-in;
 }
 
