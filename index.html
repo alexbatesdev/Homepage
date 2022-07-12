@@ -5,17 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link href="css\style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js" defer></script>
 </head>
 <body class="primary-bg">
     <header class="secondary-bg">
-        <div class="menu primary-bg">
-            <div class="palette"></div>
-            <div class="title-box">
-                <p id="title">Theme</p>
+        <div class="dropdown">
+            <div id="dropdownToggle" class="menu primary-bg drop-btn">
+                <div class="palette"></div>
+                <div class="title-box">
+                    <p id="title">Theme</p>
+                </div>
+                <div id="dropArrow" class="drop-arrow"></div>
             </div>
-            <div class="dropdown"></div>
-            <!-- Theme menu stuff goes here-->
+            <div id="dropContent" class="drop-content b-bot-rad-20">
+                <div id="dd1" class="drop-item">BlueBerry</div>
+                <div id="dd2" class="drop-item">Mint</div>
+                <div id="dd3" class="drop-item">Raisin</div>
+                <div id="dd4" class="drop-item b-bot-rad-20">Aperture</div>
+            </div>
         </div>
         <a id="snapdrop" href="https://snapdrop.net/" target="_blank">
             <img class="icon-small" src="img/SnapDrop.png" alt="Snapdrop">

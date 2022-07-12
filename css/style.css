@@ -1,7 +1,62 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Reset over*/
+
+
+
+
+
 :root {
     --primary-color: #201A23;
     --secondary-color: #2E2532;
     --accent-color: #FFF; 
+    --text-color: #f8e5ee;
 } /* Change these via the DOM, *BOOM* themes */
 
 .primary-bg {
@@ -17,7 +72,8 @@ body {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    color: #F8E5EE;
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 section {
@@ -49,14 +105,14 @@ section {
 }
 
 header {
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between;
+    align-items: center; */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 50px;
-    display: flex;
+    /* display: flex; */
     padding: 0 5px;
     z-index: 1;
 }
@@ -84,6 +140,10 @@ a {
     color: white;
 }
 
+a p {
+    margin: 15px 0;
+}
+
 img.icon {
     width: 14vw;
     height: 14vw;
@@ -102,12 +162,17 @@ img#sugeanime {
 #snapdrop {
     width: 40px;
     height: 40px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
 }
 
 .icon-small {
     width: 40px;
     height: 40px;
 }
+
+/* Dropdown Stuff */
 
 .menu {
     width: 200px;
@@ -116,17 +181,30 @@ img#sugeanime {
     align-items: center;
     justify-content: space-around;
     border-radius: 50px;
+    user-select: none;
 }
 
 .palette {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
     background-color: var(--accent-color);
-    margin-left: -13px;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
 }
 
-.dropdown {
+.title-box {
+    display: inline-block;
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    top: 8px;
+    text-align: center;
+}
+
+.drop-arrow {
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
@@ -134,4 +212,61 @@ img#sugeanime {
     border-top: none;
     border-left: none;
     margin-bottom: 5px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+
+.dropdown {
+    display: inline-block;
+    user-select: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.drop-btn {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2;
+    height: 35px;
+    width: 220px;
+}
+
+.drop-content {
+    display: none;
+    min-width: 200px;
+    z-index: 1;
+    position: relative;
+    top: 50px;
+    left: 17px;
+    margin-top: -10px;
+}
+
+.drop-item {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: var(--secondary-color);
+}
+
+.drop-item:hover {
+    background-color: var(--primary-color);
+    transition: all .2s ease-in;
+}
+
+.b-bot-rad-20 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+.show {display:block;}
+
+.up {
+    top: 15px;
+    transform: rotate(225deg);
 }
