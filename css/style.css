@@ -51,14 +51,14 @@ table {
 
 
 
-
+/* Color Theme Stuff */
 :root {
     --primary-color: #201A23;
     --secondary-color: #2E2532;
     --tertiary-color: #43344A;
     --accent-color: #6A477B;
     --text-color: #f8e5ee;
-} /* Change these via the DOM, *BOOM* themes */
+}
 
 .primary-bg {
     background-color: var(--primary-color);
@@ -75,7 +75,7 @@ table {
 .accent-bg {
     background-color: var(--accent-color);
 }
-
+/* Basic css */
 body {
     background-size: cover;
     margin: 0;
@@ -115,14 +115,11 @@ section {
 }
 
 header {
-    /* justify-content: space-between;
-    align-items: center; */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 50px;
-    /* display: flex; */
     padding: 0 5px;
     z-index: 1;
 }
