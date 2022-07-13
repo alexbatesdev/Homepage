@@ -28,73 +28,76 @@ let themeDict = {
         "--text-color" : "#F0F3BD"
     },
     "pastel" : {
-        "--primary-color" : "#64A6BD",
-        "--secondary-color" : "#90A8C3",
-        "--tertiary-color" : "#ADA7C9",
-        "--accent-color" : "#D7B9D5",
-        "--text-color" : "#F4CAE0"
+        "--primary-color" : "#A6E3E9",
+        "--secondary-color" : "#FFE6EB",
+        "--tertiary-color" : "#CBF1F5",
+        "--accent-color" : "#DEFCFC",
+        "--text-color" : "#3482C2"
     }
 }
-// ^^^ Theme List ^^^
 
 startup();
 
-// vvv Dropdown vvv
-let dropdown = document.getElementById("dropdownToggle");
+function startup() {
+    GenerateThemeMenu();
+    DommyMommy();
+}
 
+// Dropdown Menu
+let dropdown = document.getElementById("dropdownToggle");
+// Dropdown menu Toggle
 dropdown.addEventListener("click", evt => {
     document.getElementById("dropContent").classList.toggle("show");
     document.getElementById("dropArrow").classList.toggle("up");
 })
-
+// Hides the menu when anything other than the Dropdown itself is clicked
 window.onclick = (evt) => {
-    if (!evt.target.matches(".drop-btn") && !evt.target.matches("#title")&& !evt.target.matches(".drop-arrow")) {
+    if (!evt.target.matches(".drop-btn") && 
+        !evt.target.matches("#title") && 
+        !evt.target.matches(".drop-arrow")) { 
+
         var dropdownC = document.getElementById("dropContent");
         var arrow = document.getElementById("dropArrow");
-        if (dropdownC.classList.contains("show")) {
-            dropdownC.classList.remove("show");
-        }
-        if (arrow.classList.contains("up")) {
-            arrow.classList.remove("up");
-        }
+
+        if (dropdownC.classList.contains("show")) dropdownC.classList.remove("show");
+        if (arrow.classList.contains("up")) arrow.classList.remove("up"); 
     }
 }
-
-// ^^^ Dropdown ^^^
-
-function startup() {
+// GenerateThemeMenu() creates the entries in the dropdown menu dynamically depending on the amount of themes
+function GenerateThemeMenu() {
+    // Called connection because it is our connection to the page and "dropcontent" as a variable name has lost meaning to me
     let connection = document.getElementById("dropContent");
     for (key in themeDict) {
         let themeName = key;
         let item = document.createElement("div");
+        // Adding the id, display text, and class to the dropdown item
         item.id = themeName;
         item.innerText = themeName.charAt(0).toUpperCase() + themeName.slice(1);
         item.classList.add("drop-item");
-
+        // Event listener sets the theme when clicked
         item.addEventListener("click", (evt) => {
             localStorage.setItem("theme", item.id);
-            dommyMommy();
+            DommyMommy();
         })
 
-        // if (i == (Object.keys(themeDict).length - 1)) {
-        //     item.classList.add("b-bot-rad-20");
-        // }
+        // Appends to dropdown menu
         connection.appendChild(item);
     }
+    // Adds a rounded bottom to the last element
     connection.lastChild.classList.add("b-bot-rad-20");
-    dommyMommy();
 }
 
+// DommyMommy() sets all of the css variables the values from the selected theme
+// and updates the Theme dropdown title to be that of the current theme
+function DommyMommy() {
+    if (localStorage.getItem("theme")) {
+        let themeName = localStorage.getItem("theme");
 
-// localstorage + actual theme execution
-function dommyMommy() {
-    let themeName = localStorage.getItem("theme");
-
-    document.documentElement.style.setProperty("--primary-color", themeDict[themeName]["--primary-color"]);
-    document.documentElement.style.setProperty("--secondary-color", themeDict[themeName]["--secondary-color"]);
-    document.documentElement.style.setProperty("--tertiary-color", themeDict[themeName]["--tertiary-color"]);
-    document.documentElement.style.setProperty("--accent-color", themeDict[themeName]["--accent-color"]);
-    document.documentElement.style.setProperty("--text-color", themeDict[themeName]["--text-color"]);
+        document.getElementById("title").innerText = themeName.charAt(0).toUpperCase() + themeName.slice(1);
+        document.documentElement.style.setProperty("--primary-color", themeDict[themeName]["--primary-color"]);
+        document.documentElement.style.setProperty("--secondary-color", themeDict[themeName]["--secondary-color"]);
+        document.documentElement.style.setProperty("--tertiary-color", themeDict[themeName]["--tertiary-color"]);
+        document.documentElement.style.setProperty("--accent-color", themeDict[themeName]["--accent-color"]);
+        document.documentElement.style.setProperty("--text-color", themeDict[themeName]["--text-color"]);
+    }
 }
-
-// ^^^ Themes ^^^
