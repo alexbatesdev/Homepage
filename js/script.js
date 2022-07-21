@@ -33,6 +33,13 @@ let themeDict = {
         "--tertiary-color" : "#CBF1F5",
         "--accent-color" : "#DEFCFC",
         "--text-color" : "#3482C2"
+    },
+    "beach" : {
+        "--primary-color" : "#3DA5D9",
+        "--secondary-color" : "#FEC601",
+        "--tertiary-color" : "#2364AA",
+        "--accent-color" : "#EA7317",
+        "--text-color" : "#fffaff"
     }
 }
 

@@ -6,6 +6,7 @@
 
 ### **Plans:**  
 - import/export Themes via JSON 
+- random theme generated from nice color pallet
 - Goofy websites menu
 - Special themes (Big *maybe*)
 - And anything else I might think of later
