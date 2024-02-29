@@ -1,45 +1,45 @@
 let themeDict = {
-    "blueberry" : {
-        "--primary-color" : "#061A40",
-        "--secondary-color" : "#003559",
-        "--tertiary-color" : "#006DAA",
-        "--accent-color" : "#0353A4",
-        "--text-color" : "#B9D6F2"
+    "blueberry": {
+        "--primary-color": "#061555",
+        "--secondary-color": "#094292",
+        "--tertiary-color": "#006DAA",
+        "--accent-color": "#0353A4",
+        "--text-color": "#B9D6F2"
     },
-    "mint" : {
-        "--primary-color" : "#002A32",
-        "--secondary-color" : "#08605f",
-        "--tertiary-color" : "#2EC4B6",
-        "--accent-color" : "#CBF3F0",
-        "--text-color" : "#FFFFFF"
+    "mint": {
+        "--primary-color": "#002A32",
+        "--secondary-color": "#08605f",
+        "--tertiary-color": "#2EC4B6",
+        "--accent-color": "#CBF3F0",
+        "--text-color": "#FFFFFF"
     },
-    "raisin" : {
-        "--primary-color" : "#201A23",
-        "--secondary-color" : "#2E2532",
-        "--tertiary-color" : "#43344A",
-        "--accent-color" : "#6A477B",
-        "--text-color" : "#f8e5ee"
+    "raisin": {
+        "--primary-color": "#201A23",
+        "--secondary-color": "#2E2532",
+        "--tertiary-color": "#43344A",
+        "--accent-color": "#6A477B",
+        "--text-color": "#f8e5ee"
     },
-    "island" : {
-        "--primary-color" : "#05668D",
-        "--secondary-color" : "#028090",
-        "--tertiary-color" : "#00A896",
-        "--accent-color" : "#02C39A",
-        "--text-color" : "#F0F3BD"
+    "island": {
+        "--primary-color": "#05668D",
+        "--secondary-color": "#028090",
+        "--tertiary-color": "#00A896",
+        "--accent-color": "#02C39A",
+        "--text-color": "#F0F3BD"
     },
-    "pastel" : {
-        "--primary-color" : "#A6E3E9",
-        "--secondary-color" : "#FFE6EB",
-        "--tertiary-color" : "#CBF1F5",
-        "--accent-color" : "#DEFCFC",
-        "--text-color" : "#3482C2"
+    "pastel": {
+        "--primary-color": "#A6E3E9",
+        "--secondary-color": "#FFE6EB",
+        "--tertiary-color": "#CBF1F5",
+        "--accent-color": "#DEFCFC",
+        "--text-color": "#3482C2"
     },
-    "beach" : {
-        "--primary-color" : "#3DA5D9",
-        "--secondary-color" : "#FEC601",
-        "--tertiary-color" : "#2364AA",
-        "--accent-color" : "#EA7317",
-        "--text-color" : "#fffaff"
+    "beach": {
+        "--primary-color": "#3DA5D9",
+        "--secondary-color": "#FEC601",
+        "--tertiary-color": "#2364AA",
+        "--accent-color": "#EA7317",
+        "--text-color": "#fffaff"
     }
 }
 
@@ -59,15 +59,15 @@ dropdown.addEventListener("click", evt => {
 })
 // Hides the menu when anything other than the Dropdown itself is clicked
 window.onclick = (evt) => {
-    if (!evt.target.matches(".drop-btn") && 
-        !evt.target.matches("#title") && 
-        !evt.target.matches(".drop-arrow")) { 
+    if (!evt.target.matches(".drop-btn") &&
+        !evt.target.matches("#title") &&
+        !evt.target.matches(".drop-arrow")) {
 
         var dropdownC = document.getElementById("dropContent");
         var arrow = document.getElementById("dropArrow");
 
         if (dropdownC.classList.contains("show")) dropdownC.classList.remove("show");
-        if (arrow.classList.contains("up")) arrow.classList.remove("up"); 
+        if (arrow.classList.contains("up")) arrow.classList.remove("up");
     }
 }
 // GenerateThemeMenu() creates the entries in the dropdown menu dynamically depending on the amount of themes
