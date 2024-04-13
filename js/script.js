@@ -40,6 +40,13 @@ let themeDict = {
         "--tertiary-color": "#2364AA",
         "--accent-color": "#EA7317",
         "--text-color": "#fffaff"
+    },
+    "scarlet": {
+        "--primary-color": "#390909",
+        "--secondary-color": "#711010",
+        "--tertiary-color": "#651818",
+        "--accent-color": "#901313",
+        "--text-color": "#EBFFF4"
     }
 }
 
